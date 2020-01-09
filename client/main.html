@@ -1,0 +1,21 @@
+<head>
+  <title>meteor-login-bug</title>
+</head>
+
+<body>
+  {{> loginButtons}}
+  {{#if currentUser}}
+    {{> hello}}
+  {{else}}
+    {{> logout}}
+  {{/if}}
+</body>
+
+<template name="hello">
+  <p><code>Accounts.onLogin()</code> method saves messages every time that runs and increases 
+    in two because fire twice.  Total of messages: {{counter}}</p>
+</template>
+
+<template name="logout">
+  <p>You are logout of the application</p>
+</template>
